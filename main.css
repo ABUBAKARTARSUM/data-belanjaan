@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+body {
+    background: #1b4332;
+    color: white;
+}
+h1,
+h2,
+h3 {
+    font-family: 'Roboto Slab', cursive;
+}
+.form-control  {
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+.form-control:focus {
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    color: white;
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Link To CSS File -->
+    <link rel="stylesheet" href="main.css">
+
+    <title>Data Belanjaan Usman ~ Pribadi</title>
+  </head>
+  <body>
+    <section id="data-belanja">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h2 class="fw-bold text-uppercase mt-5">data belanjaan</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <hr class="text-white">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                  <div class="alert alert-danger alert-dismissible fade show d-none my-alert" role="alert">
+                    <strong>Terimakasih!</strong>Komentar sudah di terima.<i class="bi bi-emoji-heart-eyes"></i>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  <form name="project-contact-form" class="mb-5">
+                    <div class="mb-3">
+                      <label for="namaBarang" class="form-label text-white fw-bold text-uppercase">nama barang</label>
+                      <input type="text" class="form-control border-0 text-white shadow text-uppercase" id="namaBarang"     name="namaBarang" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="tanggalBeli" class="form-label text-white fw-bold text-uppercase">tanggal pembelian</label>
+                      <input type="date" class="form-control border-0 text-white shadow text-uppercase" id="tanggalBeli" name="tanggalBeli" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="jumlahItem" class="form-label text-white fw-bold text-uppercase">jumalh barang</label>
+                      <input type="number" class="form-control border-0 text-white shadow text-uppercase" id="jumlahItem" name="jumlahItem" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="hargaBarang" class="form-label text-white fw-bold text-uppercase">Harga Barang</label>
+                      <input type="number" class="form-control border-0 text-white shadow text-uppercase" id="hargaBarang" name="hargaBarang" />
+                    </div>
+                    <div class="mb-3">
+                      <label for="totalHarga" class="form-label text-white fw-bold text-uppercase">total</label>
+                      <input type="number" class="form-control border-0 text-white shadow text-uppercase" id="totalHarga" name="total" />
+                    </div>
+                    <button type="submit" class="btn btn-success tombol-radius  btn-kirim">Kelola Data</button>
+                    <button type="button" class="btn btn-success tombol-radius" id="calculation" onclick="kalkulasi()">Kalkulasikan</button>
+                    <button class="btn btn-success btn-loading d-none" type="button" disabled>
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Loading...
+                    </button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Link JavaScript Bootstrap Version 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- SweetAlert JavaScript -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- Link To My File JavaScript -->
+    <script src="app.js"></script>
+    <script>
+      function kalkulasi() {
+      const jumlahItem = document.getElementById('jumlahItem').value;
+      const hargaBarang = document.getElementById('hargaBarang').value;
+      const total = parseInt(jumlahItem) * parseInt(hargaBarang);
+      document.getElementById('totalHarga').value=total;
+    }
+    </script>
+  </body>
+</html>
